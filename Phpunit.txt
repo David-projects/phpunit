@@ -1,0 +1,4 @@
+
+
+run composer dump-autoload
+php vendor\phpunit\phpunit\phpunit --bootstrap="vendor/autoload.php"
