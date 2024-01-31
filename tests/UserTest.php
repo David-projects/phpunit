@@ -39,4 +39,24 @@ class UserTest extends TestCase
 
         $this->assertTrue($result);
     }
+
+    /**
+     * @expectedException Exception
+     */
+    // public function testNotificationThrowException()
+    // {
+    //     $user = new User;
+    //     $mock = $this->getMockBuilder(Mailer::class)
+    //         ->onlyMethods(['sendMessage'])
+    //         ->getMock();
+
+    //     $mock->expects($this->once())
+    //         ->method('sendmessage')
+    //         ->with($this->throwException(new Exception));
+
+    //     $this->expectException(Exception::class);
+
+    //     $user->setMailer($mock);
+    //     $result = $user->notify('hello');
+    // }
 }

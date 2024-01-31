@@ -11,12 +11,17 @@ class Mailer
      * Send a message
      *
      * @param string $email The email address
-     * @param string $message The message
-     *
+     * @param string $message The 
+     * 
+     * @throws Exception
      * @return boolean True if sent, false otherwise
      */
     public function sendMessage($email, $message)
     {
+        if(empty($email))
+        {
+            throw new Exception;
+        }
         // Use mail() or PHPMailer for example
         sleep(3);
 
