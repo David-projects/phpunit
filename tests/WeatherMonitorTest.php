@@ -9,6 +9,9 @@ class WeatherMonitorTest extends TestCase
         Mockery::close();
     }
     
+    /**
+     * uses phpunit
+     */
     public function testCorrectAverageIsReturned()
     {
         $service = $this->createMock(TemperatureService::class);
@@ -27,6 +30,9 @@ class WeatherMonitorTest extends TestCase
         $this->assertEquals(23, $weather->getAverageTemperature('12:00', '14:00'));
     }    
     
+    /**
+     * with mockery this looks better
+     */
     public function testCorrectAverageIsReturnedWithMockery()
     {
         $service = Mockery::mock(TemperatureService::class);     
