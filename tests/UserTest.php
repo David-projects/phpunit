@@ -43,20 +43,20 @@ class UserTest extends TestCase
     /**
      * @expectedException Exception
      */
-    // public function testNotificationThrowException()
-    // {
-    //     $user = new User;
-    //     $mock = $this->getMockBuilder(Mailer::class)
-    //         ->onlyMethods(['sendMessage'])
-    //         ->getMock();
+    public function testNotificationThrowException()
+    {
+        $user = new User;
+        $mock = $this->getMockBuilder(Mailer::class)
+            ->onlyMethods(['sendMessage'])
+            ->getMock();
 
-    //     $mock->expects($this->once())
-    //         ->method('sendmessage')
-    //         ->with($this->throwException(new Exception));
+        $mock->expects($this->once())
+            ->method('sendmessage')
+            ->will($this->throwException(new Exception));
 
-    //     $this->expectException(Exception::class);
+        $this->expectException(Exception::class);
 
-    //     $user->setMailer($mock);
-    //     $result = $user->notify('hello');
-    // }
+        $user->setMailer($mock);
+        $result = $user->notify('hello');
+    }
 }
